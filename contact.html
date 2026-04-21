@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected="true">
+    <div class="navbar">
+        <h2 class="brand">🌦 Weather Dashboard</h2>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blogs.html">Blogs</a>
+            <a class="active" href="contact.html">Contact</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="page-wrap">
+    <div class="panel">
+        <h1>Contact Us</h1>
+        <form onsubmit="submitContact(event)">
+            <label for="name">Name</label>
+            <input id="name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="contactStatus" class="status"></div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

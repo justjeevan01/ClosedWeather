@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h2 class="brand">🌦 Weather Dashboard</h2>
+        <div class="nav-links">
+            <a class="active" href="login.html">Login</a>
+        </div>
+    </div>
+
+    <div class="auth-box panel">
+        <h1>Account Access</h1>
+        <p class="subtitle">Login and Sign Up are shown side by side.</p>
+
+        <div class="auth-grid">
+            <div class="auth-card">
+                <h2>Login</h2>
+                <form onsubmit="handleLogin(event)">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" required>
+
+                    <label for="password">Password</label>
+                    <input id="password" type="password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+                <div id="loginStatus" class="status"></div>
+            </div>
+
+            <div class="auth-card">
+                <h2>Create Account</h2>
+                <form onsubmit="handleSignup(event)">
+                    <label for="signupUsername">Username</label>
+                    <input id="signupUsername" type="text" required>
+
+                    <label for="signupPassword">Password</label>
+                    <input id="signupPassword" type="password" required>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <div id="signupStatus" class="status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Weather Dashboard using API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-protected="true">
+    <div class="navbar">
+        <h2 class="brand">🌦 Weather Dashboard</h2>
+        <div class="nav-links">
+            <a class="active" href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="contact.html">Contact</a>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="page-wrap">
+    <div class="panel">
+        <h1>Interactive Weather Home</h1>
+        <p class="subtitle">Search a city and view live weather details instantly.</p>
+
+        <div class="weather-form">
+            <input id="city" type="text" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+
+        <div id="weatherResult" class="result">Weather details will appear here.</div>
+
+        <div class="chart-wrap">
+            <canvas id="weatherChart" height="120"></canvas>
+        </div>
+
+        <div class="quick-actions">
+            <button onclick="setCity('Chennai')">Chennai</button>
+            <button onclick="setCity('London')">London</button>
+            <button onclick="setCity('New York')">New York</button>
+            <button onclick="showTime()">Show Local Time</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

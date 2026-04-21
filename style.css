@@ -1,0 +1,255 @@
+:root {
+    --bg-dark: #0b1220;
+    --bg-mid: #111a2f;
+    --card: #172441;
+    --card-soft: #1f2f52;
+    --text-main: #e8f1ff;
+    --text-soft: #b9caea;
+    --brand: #57c7ff;
+    --brand-2: #7b8cff;
+    --success: #38d39f;
+    --danger: #ff7d7d;
+    --border: rgba(130, 170, 255, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top right, #1e2f56 0%, var(--bg-dark) 52%);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    background: rgba(11, 18, 32, 0.85);
+}
+
+.brand {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.navbar a,
+.logout-btn {
+    text-decoration: none;
+    color: var(--text-soft);
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+}
+
+.navbar a:hover,
+.logout-btn:hover {
+    color: var(--text-main);
+    border-color: var(--border);
+    background: rgba(90, 160, 255, 0.1);
+}
+
+.navbar a.active {
+    color: var(--text-main);
+    border-color: rgba(89, 192, 255, 0.4);
+    background: rgba(87, 199, 255, 0.15);
+}
+
+.logout-btn {
+    cursor: pointer;
+    background: rgba(255, 125, 125, 0.12);
+    color: #ffd9d9;
+    border-color: rgba(255, 125, 125, 0.25);
+}
+
+.page-wrap {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 20px 32px;
+}
+
+.panel {
+    background: linear-gradient(180deg, rgba(27, 42, 74, 0.9), rgba(20, 30, 53, 0.95));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.28);
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: #f2f7ff;
+}
+
+p, li, label {
+    color: var(--text-soft);
+}
+
+.subtitle {
+    margin-top: -6px;
+    margin-bottom: 22px;
+}
+
+.weather-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+textarea {
+    width: 100%;
+    background: rgba(9, 15, 30, 0.72);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px 12px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    border: 0;
+    border-radius: 12px;
+    padding: 11px 14px;
+    background: linear-gradient(135deg, var(--brand), var(--brand-2));
+    color: #001126;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 16px;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px dashed rgba(122, 173, 255, 0.45);
+    background: rgba(17, 31, 58, 0.65);
+    color: #dbe9ff;
+    min-height: 56px;
+}
+
+.chart-wrap {
+    margin-top: 16px;
+    border: 1px solid rgba(122, 173, 255, 0.3);
+    background: rgba(17, 31, 58, 0.65);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.quick-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.quick-actions button {
+    background: rgba(87, 199, 255, 0.15);
+    color: #cfe7ff;
+    border: 1px solid rgba(87, 199, 255, 0.35);
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.card {
+    background: linear-gradient(160deg, var(--card-soft), var(--card));
+    border: 1px solid rgba(99, 152, 238, 0.25);
+    color: var(--text-main);
+    padding: 18px;
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 25px rgba(3, 8, 20, 0.35);
+    border-color: rgba(125, 175, 255, 0.55);
+}
+
+.card.active {
+    border-color: rgba(87, 199, 255, 0.75);
+    box-shadow: 0 0 0 2px rgba(87, 199, 255, 0.2);
+}
+
+.card p {
+    margin: 8px 0 12px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #dff4ff;
+    font-weight: 700;
+}
+
+.status {
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.status.success {
+    color: var(--success);
+}
+
+.status.error {
+    color: var(--danger);
+}
+
+.auth-box {
+    max-width: 900px;
+    margin: 52px auto;
+}
+
+.auth-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.auth-card {
+    border: 1px solid rgba(130, 170, 255, 0.22);
+    border-radius: 14px;
+    padding: 16px;
+    background: rgba(13, 23, 43, 0.6);
+}
+
+@media (max-width: 700px) {
+    .weather-form {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-grid {
+        grid-template-columns: 1fr;
+    }
+}
